@@ -73,3 +73,18 @@ func main() {
 
 ```
 
+Output:
+```shell
+10
+even true <nil>
+odd true mock error
+even true <nil>
+odd true mock error
+even true <nil>
+odd true mock error
+even true <nil>
+odd true mock error
+even true <nil>
+odd true mock error
+```
+
