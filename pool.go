@@ -6,7 +6,7 @@ import (
 )
 
 type FuncDef interface {
-	Call(context.Context) struct{}
+	Call(context.Context)
 }
 
 type FuncPool struct {
@@ -37,7 +37,8 @@ func (obj *FuncPool) Start() {
 		go func() {
 			for f := range obj.Funcs {
 				innerCtx, cancel := context.WithCancel(obj.Ctx)
-				obj.Results <- f.Call(innerCtx)
+				f.Call(innerCtx)
+				obj.Results <- struct{}{}
 				obj.incrementResultCount()
 				cancel()
 			}

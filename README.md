@@ -29,17 +29,15 @@ type FuncMock struct {
   Error       error
 }
 
-func (obj *FuncMock) Call(ctx context.Context) struct{} {
+func (obj *FuncMock) Call(ctx context.Context) {
   defer func() {
     obj.Done = true
   }()
   if obj.Val1%2 == 0 {
     obj.ReturnValue = "even"
-    return struct{}{}
   } else {
     obj.ReturnValue = "odd"
     obj.Error = ErrMock
-    return struct{}{}
   }
 }
 
