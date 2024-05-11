@@ -1,8 +1,9 @@
 # func-pool
 
-A simple function pool executor for Go. Allows you to scatter and 
-gather results from your functions. Look at the tests in this repository
-for examples on how to use this package.
+A simple function pool executor for Go. Allows you to scatter 
+func calls go routines and gather results from your functions. 
+Look at the tests in this repository for examples on how to
+use this package.
 
 Example:
 ```go
